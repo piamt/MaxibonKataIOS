@@ -24,7 +24,7 @@ extension Developer: Arbitrary {
     }
 
     public static var arbitraryHungry: Gen<Developer> {
-        return Gen<Int>.fromElementsIn(8...Int.max).map {
+        return Gen<Int>.fromElementsIn(0...Int.max).map {
             let name = String.arbitrary.generate
             return Developer(name: name, numberOfMaxibonsToGet: $0)
         }
